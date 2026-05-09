@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jibonge | Your Safe Space to Talk and Heal</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i data-lucide="heart" class="icon-primary"></i>
+                <span>Jibonge</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#therapists">Therapists</a></li>
+                <li><button class="btn-primary" onclick="openBooking()">Book Now</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h1>Your Safe Space to <span class="text-primary">Talk and Heal</span></h1>
+                <p>Professional therapy and counseling. Connect with licensed experts from the comfort of your home or at our mall locations.</p>
+                <div class="hero-btns">
+                    <button class="btn-accent" onclick="openBooking()">Start Healing</button>
+                    <button class="btn-outline">Learn More</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Placeholder for African Therapist Illustration -->
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Kioko&backgroundColor=a3b18a" alt="Therapist">
+            </div>
+        </div>
+    </header>
+
+    <!-- Features -->
+    <section id="features" class="features">
+        <div class="container grid-3">
+            <div class="card">
+                <i data-lucide="shield-check" class="icon-accent"></i>
+                <h3>100% Private</h3>
+                <p>Your privacy is our priority. Encrypted and confidential sessions.</p>
+            </div>
+            <div class="card">
+                <i data-lucide="map-pin" class="icon-accent"></i>
+                <h3>Physical Locations</h3>
+                <p>Visit us at TRM, Village Market, or Juja City Mall.</p>
+            </div>
+            <div class="card">
+                <i data-lucide="calendar" class="icon-accent"></i>
+                <h3>Flexible Timing</h3>
+                <p>Book a session that fits your busy schedule, day or night.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal (Hidden by Default) -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBooking()">&times;</span>
+            <div id="bookingStep1">
+                <h2>Book a Session</h2>
+                <label>Select Therapist</label>
+                <select id="therapistSelect">
+                    <option value="1">Kioko Njeri (Lead Therapist)</option>
+                    <option value="2">Sarah Wambui (Family Counselor)</option>
+                </select>
+
+                <label>Session Type</label>
+                <select id="locationSelect">
+                    <option value="online">Online Therapy</option>
+                    <option value="trm">Thika Road Mall (TRM)</option>
+                    <option value="vm">Village Market</option>
+                </select>
+
+                <button class="btn-primary full-width" onclick="goToPayment()">Continue to Payment</button>
+            </div>
+
+            <div id="paymentStep" class="hidden">
+                <h2>M-Pesa Payment</h2>
+                <p>Amount: <strong>KES 2,500</strong></p>
+                <input type="text" id="mpesaNumber" value="0794771937" placeholder="07XXXXXXXX">
+                <button id="payBtn" class="btn-mpesa full-width" onclick="simulatePayment()">Pay with M-Pesa</button>
+            </div>
+
+            <div id="successStep" class="hidden text-center">
+                <i data-lucide="check-circle" class="icon-success"></i>
+                <h2>Booking Confirmed!</h2>
+                <p>Check your SMS for the Google Meet link.</p>
+                <button class="btn-outline" onclick="closeBooking()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <h3>Jibonge</h3>
+                <p>Healing hearts, one talk at a time.</p>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <p>Kioko Njeri</p>
+                <p>0794771937</p>
+                <p>jaspherkioko45@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
